@@ -1,0 +1,146 @@
+.add-job-container {
+    max-width: 800px;
+    /* Adjusted to 800px as per your request for a desktop form width */
+    /* width: 100%; */
+    /* Ensures it takes up full width up to max-width */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #2a2a2a;
+    /* Darker background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    /* Light text for readability */
+}
+
+.add-job-container h2 {
+    text-align: center;
+    color: #61dafb;
+    /* React blue */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.add-job-form .form-group {
+    margin-bottom: 20px;
+}
+
+.add-job-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #a0a0a0;
+    /* Slightly lighter label color */
+}
+
+.add-job-form input[type="text"],
+.add-job-form textarea,
+.add-job-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+.add-job-form input[type="text"]::placeholder,
+.add-job-form textarea::placeholder {
+    color: #888;
+}
+
+.add-job-form textarea {
+    resize: vertical;
+    /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.add-job-form select {
+    appearance: none;
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e0e0e0%22%20d%3D%22M287%2C114.7L159.2%2C242.5c-4.4%2C4.4-11.4%2C4.4-15.8%2C0L5.4%2C114.7c-4.4-4.4-4.4-11.4%2C0-15.8l15.8-15.8c4.4-4.4%2C11.4-4.4%2C15.8%2C0l112.5%2C112.5l112.5-112.5c4.4-4.4%2C11.4-4.4%2C15.8%2C0l15.8%2C15.8C291.4%2C103.3%2C291.4%2C110.3%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E');
+    /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+    padding-right: 30px;
+    /* Space for the arrow */
+}
+
+
+.submit-job-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #61dafb;
+    /* React blue */
+    color: #282c34;
+    /* Dark text for contrast */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-job-button:hover {
+    background-color: #4ac6eb;
+}
+
+.cancel-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #f44336;
+    /* Red for cancel */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    /* Space from post button */
+}
+
+.cancel-button:hover {
+    background-color: #d32f2f;
+}
+
+.form-message {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #6dee0a;
+    /* Green for success */
+}
+
+/* For error messages */
+.form-message.error {
+    color: #ff6b6b;
+    /* Red for error */
+}
+
+/* Media query for smaller screens (like mobile) */
+@media (max-width: 600px) {
+    .add-job-container {
+        max-width: 100%;
+        /* Make it full width on small screens */
+        margin: 20px;
+        /* Reduce top/bottom margin on mobile */
+        padding: 20px;
+        /* Reduce padding on mobile */
+        border-radius: 0;
+        /* Optional: remove rounded corners on mobile full width */
+        box-shadow: none;
+        /* Optional: remove shadow on mobile full width */
+    }
+}

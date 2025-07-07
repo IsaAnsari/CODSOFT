@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowFocus - Boost Your Productivity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <nav>
+                <div class="logo">FlowFocus</div>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#get-started">Get Started</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hero-content">
+                <h1>Unlock Your Potential with FlowFocus</h1>
+                <p>Revolutionizing the way you manage tasks and achieve goals. Discover unparalleled efficiency and
+                    simplicity.</p>
+                <a href="#get-started" class="btn">Get Started Now!</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="features" class="container section-padding">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Smart Prioritization Engine</h3>
+                    <p>Never miss a deadline again. Our AI-powered engine automatically analyzes your tasks, deadlines,
+                        and habits to suggest the most crucial next steps, ensuring you always work on what matters
+                        most.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Universal Workspace Access</h3>
+                    <p>Your work, wherever you are. FlowFocus keeps all your projects, notes and schedules perfectly
+                        synchronized across your desktop, tablet, and mobile, so you can pick up right where you left
+                        off, every time.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Collaborative Canvas</h3>
+                    <p>Teamwork made effortless. Share projects, assign sub-tasks, and communicate in real-time within a
+                        shared digital workspace. Track progress together and achieve your goals faster, as a unified
+                        team.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container section-padding">
+            <h2>About FlowFocus</h2>
+            <div class="about-content">
+                <p>FlowFocus is designed for individuals and teams striving for peak productivity without the
+                    complexity. We are a dedicated team passionate about creating innovative solutions that make a real
+                    difference in how you organize and execute your daily tasks.</p>
+                <p>Founded on the principles of intuitive design and powerful functionality, FlowFocus constantly
+                    strives to exceed expectations and empower our users to achieve their full potential.</p>
+            </div>
+        </section>
+
+        <section id="get-started" class="container section-padding call-to-action">
+            <h2>Ready to Boost Your Productivity?</h2>
+            <p>Join thousands of satisfied users who are already transforming their workflow with FlowFocus. Get started
+                today and experience the difference!</p>
+            <a href="#" id="downloadAppBtn" class="btn primary-btn">Download FlowFocus App</a>
+            <a href="#" id="signUpBtn" class="btn secondary-btn">Sign Up for Free Trial</a>
+        </section>
+
+        <section id="contact" class="container section-padding">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to learn more about FlowFocus? Contact us today!</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5"></textarea>
+                <button type="submit" class="btn" id="contactFormBtn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FlowFocus. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Twitter</a> |
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get references to the buttons
+        const downloadBtn = document.getElementById('downloadAppBtn');
+        const signUpBtn = document.getElementById('signUpBtn');
+        const contactBtn = document.getElementById('contactFormBtn');
+
+        // Function for download button click
+        downloadBtn.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            alert('Download initiated! Thanks for choosing FlowFocus.');
+            this.textContent = 'Downloading...';
+            this.style.backgroundColor = '#6c757d'; // Change color to gray
+            this.style.cursor = 'not-allowed';
+            this.disabled = true; // Disable the button temporarily
+            // Re-enable after a short delay (optional)
+            setTimeout(() => {
+                this.textContent = 'Download Complete!';
+                // For a real app, you might enable a link or redirect here.
+            }, 2000); // 2 seconds
+        });
+
+        // Function for sign up button click
+        signUpBtn.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            alert('Signed up successfully! Check your email for details.');
+            this.textContent = 'Signing Up...';
+            this.style.backgroundColor = '#6c757d'; // Change color to gray
+            this.style.cursor = 'not-allowed';
+            this.disabled = true; // Disable the button temporarily
+            // Re-enable after a short delay (optional)
+            setTimeout(() => {
+                this.textContent = 'Signed Up!';
+            }, 2000); // 2 seconds
+        });
+
+        // Function for contact form submission
+        contactBtn.addEventListener('click', function (event) {
+            // Check if form is valid before preventing default submission
+            const form = this.closest('form');
+            if (form.checkValidity()) {
+                event.preventDefault(); // Prevent actual form submission for demo
+                alert('Thank you for your message! We will get back to you soon.');
+                // Optionally clear form fields
+                form.reset();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

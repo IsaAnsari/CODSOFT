@@ -1,0 +1,59 @@
+.job-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Pushes apply button to bottom if content varies */
+}
+
+.job-card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.job-card p {
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.job-card span {
+    font-size: 0.85em;
+    color: #777;
+    display: block;
+    /* Ensures location is on its own line */
+    margin-bottom: 10px;
+}
+
+.job-card .job-description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    /* Allows description to take up available space */
+}
+
+.apply-btn {
+    background-color: #28a745;
+    /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    /* Aligns button to the left within the card */
+}
+
+.apply-btn:hover {
+    background-color: #218838;
+}

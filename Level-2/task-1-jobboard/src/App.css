@@ -1,0 +1,699 @@
+/* src/App.css */
+
+/* General Body Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #222;
+  /* Dark background */
+  color: #eee;
+  /* Light text color */
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  /* Center the entire app-container */
+  min-height: 100vh;
+  /* Full viewport height */
+  overflow-y: scroll;
+  /* Enable scrolling for content overflow */
+}
+
+/* App Container - Centralizes the application */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  /* Max width to keep content readable */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Include padding in width */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 3rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  color: #8edcff;
+  /* Light blue for heading */
+}
+
+/* Navigation */
+.app-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.app-header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.app-header nav ul li a:hover,
+.app-header nav ul li a.active {
+  color: #8edcff;
+  background-color: #444;
+  border-radius: 4px;
+}
+
+/* Hero Section (Home Page) */
+.hero-section {
+  background-color: #333;
+  padding: 80px 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section h2 {
+  font-size: 3.5rem;
+  color: #8edcff;
+  /* Light blue for main heading */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Explore Button (Used in Hero) */
+.explore-button {
+  display: inline-block;
+  background-color: #007bff;
+  /* Blue */
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.explore-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Featured Listings Section & All Job Listings Section */
+.featured-listings-section,
+.job-listings-section {
+  /* <<< Keep this for Job Listings */
+  background-color: #333;
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* No max-width or margin:auto here, as they are handled by app-container or parent */
+  /* REMOVE: max-width: 800px;  if it was there */
+  /* REMOVE: margin: 30px auto; if it was there (unless you want it smaller than main container) */
+}
+
+.featured-listings-section h2,
+.job-listings-section h2 {
+  font-size: 2.5rem;
+  color: #8edcff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  margin-bottom: 30px;
+  /* This can inherit width, or you can control it more specifically */
+}
+
+.search-bar input {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px 20px;
+  border: 1px solid #555;
+  border-radius: 25px;
+  background-color: #444;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: #bbb;
+}
+
+.search-bar input:focus {
+  border-color: #8edcff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 5px rgba(142, 220, 255, 0.5);
+}
+
+/* Job Listings Grid */
+.job-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  /* Add horizontal padding to the grid */
+}
+
+/* Job Card */
+.job-card {
+  background-color: #444;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.job-card h3 {
+  color: #8edcff;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.job-card p strong {
+  color: #fff;
+}
+
+.job-description-preview {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 15px;
+}
+
+.job-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  /* Align buttons to the left */
+  gap: 10px;
+  /* Space between buttons */
+  margin-top: 20px;
+}
+
+/* Buttons in Job Card */
+.apply-button,
+.view-details-button,
+/* If you use this instead of apply-button for details */
+.delete-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.apply-button,
+.view-details-button {
+  background-color: #28a745;
+  /* Green for apply/view */
+  color: #fff;
+}
+
+.apply-button:hover,
+.view-details-button:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.delete-button {
+  background-color: #dc3545;
+  /* Red for delete */
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+/* No Jobs Found Message */
+.no-jobs-found,
+.loading-message,
+.error-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bbb;
+  padding: 20px;
+  background-color: #444;
+  border-radius: 8px;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.error-message {
+  color: #dc3545;
+  /* Red for errors */
+}
+
+/* Add Job Page / Edit Job Page */
+.add-job-section,
+.edit-job-section {
+  background-color: #333;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+  /* Keep this to center the form within the content area */
+  max-width: 700px;
+  /* <<< Adjust this max-width to control the form width */
+  /* If you want this section to be full width like Home, remove max-width and margin:auto,
+       and let it be directly inside the App component's main rendering area.
+       However, forms often look better with a defined max-width.
+       Let's try increasing this from 700px to, say, 900px or even 1000px if you want it wider. */
+}
+
+.add-job-section h2,
+.edit-job-section h2 {
+  font-size: 2.5rem;
+  color: #8edcff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #eee;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+  width: calc(100% - 22px);
+  /* Account for padding and border */
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  /* Include padding in width */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #8edcff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  /* Allow vertical resizing */
+  min-height: 100px;
+}
+
+/* Form Buttons */
+.post-job-button,
+.update-job-button,
+/* If you use a separate class for update */
+.cancel-button {
+  padding: 12px 25px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.post-job-button,
+.update-job-button {
+  background-color: #28a745;
+  /* Green */
+  color: #fff;
+}
+
+.post-job-button:hover,
+.update-job-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.cancel-button {
+  background-color: #6c757d;
+  /* Gray */
+  color: #fff;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+/* Job Detail Page */
+.job-detail-section {
+  background-color: #333;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 30px auto;
+  /* Keep this for centering */
+  max-width: 800px;
+  /* <<< Adjust this max-width for the detail page width */
+  text-align: left;
+}
+
+.job-detail-section h2 {
+  font-size: 2.5rem;
+  color: #8edcff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.job-detail-card {
+  background-color: #444;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.job-detail-card p {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.job-detail-card p strong {
+  color: #fff;
+  margin-right: 5px;
+}
+
+.posted-date {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: right;
+  /* Align date to the right */
+  margin-top: 20px;
+}
+
+.job-detail-actions {
+  display: flex;
+  justify-content: flex-start;
+  /* Align buttons to the left */
+  gap: 15px;
+  /* Space between buttons */
+  margin-top: 30px;
+}
+
+/* Specific buttons on Job Detail Page */
+.back-button {
+  background-color: #007bff;
+  /* Blue */
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.edit-button {
+  background-color: #ffc107;
+  /* Yellow/Orange */
+  color: #333;
+  /* Dark text for contrast */
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
+
+/* Delete button on detail page uses .delete-button class from above */
+
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  /* Pushes the footer to the bottom */
+  color: #bbb;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Toastify Styling (Optional, but recommended) */
+/* You can customize these if you want different toast styles */
+.Toastify__toast-container {
+  top: 60px !important;
+  right: 20px !important;
+}
+
+.Toastify__toast--success {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.Toastify__toast--error {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-section {
+    padding: 60px 20px;
+  }
+
+  .hero-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .job-listings {
+    grid-template-columns: 1fr;
+    /* Single column on smaller screens */
+    padding: 0;
+  }
+
+  .job-card,
+  .add-job-section,
+  .edit-job-section,
+  .job-detail-section {
+    margin: 20px 10px;
+    padding: 20px;
+    max-width: unset;
+  }
+
+  .search-bar input {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0.5rem 0;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .app-header nav ul li a {
+    font-size: 0.9rem;
+    padding: 3px 8px;
+  }
+
+  .hero-section {
+    padding: 40px 15px;
+  }
+
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+
+  .job-card-actions,
+  .job-detail-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .apply-button,
+  .delete-button,
+  .back-button,
+  .edit-button {
+    width: 100%;
+    /* Full width buttons on small screens */
+    text-align: center;
+  }
+
+  .post-job-button,
+  .cancel-button {
+    width: calc(100% - 15px);
+    /* Adjust for margin */
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+/* src/App.css */
+
+/* ... (previous styles) ... */
+
+/* Common Section Style for Static Pages (Employers, Contact, etc.) */
+.static-page-section {
+  background-color: #333;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 30px auto;
+  /* Centers the section and provides vertical spacing */
+  max-width: 900px;
+  /* Adjust this to control the width of these pages */
+  text-align: center;
+  /* Center content within these sections */
+  color: #eee;
+}
+
+.static-page-section h2 {
+  font-size: 2.5rem;
+  color: #8edcff;
+  margin-bottom: 25px;
+}
+
+.static-page-section p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.static-page-section ul {
+  list-style: none;
+  /* Remove default bullet points */
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+  /* Optional: limit width of lists for readability */
+  text-align: left;
+  /* Align list items to left */
+}
+
+.static-page-section ul li {
+  background-color: #444;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #007bff;
+  /* Accent color */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.static-page-section a {
+  color: #8edcff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.static-page-section a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* ... (responsive adjustments, ensure .static-page-section is covered) ... */
+@media (max-width: 768px) {
+
+  /* ... existing rules ... */
+  .static-page-section {
+    padding: 20px;
+    margin: 20px 10px;
+    /* Adjust margin for smaller screens */
+    max-width: unset;
+    /* Allow full width on small screens */
+  }
+
+  .static-page-section ul {
+    padding-left: 10px;
+    /* Add some padding for lists on small screens */
+  }
+}
