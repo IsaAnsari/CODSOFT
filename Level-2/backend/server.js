@@ -10,7 +10,8 @@ app.use(cors());
 app.use(express.json()); // To parse JSON request bodies
 
 // MongoDB Connection
-const mongoURI = 'mongodb+srv://isaansari032:B8NIsQgUQ4NtecGy@cluster0.qty30b1.mongodb.net/jobboardDB?retryWrites=true&w=majority&appName=Cluster0';
+// const mongoURI = 'mongodb+srv://isaansari032:B8NIsQgUQ4NtecGy@cluster0.qty30b1.mongodb.net/jobboardDB?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = process.env.MONGO_URI; // Use the environment variable
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error(err));
