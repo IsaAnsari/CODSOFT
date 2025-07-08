@@ -38,6 +38,8 @@ app.get('/api/jobs', async (req, res) => {
         const jobs = await Job.find().sort({ postedAt: -1 }); // Sort by newest first
         res.json(jobs);
     } catch (err) {
+        console.error('Error fetching jobs:', err.message); // ADD THIS LINE
+        console.error(err); // ADD THIS LINE for full error object
         res.status(500).json({ msg: 'Server error' });
     }
 });
