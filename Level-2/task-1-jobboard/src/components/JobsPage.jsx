@@ -13,7 +13,7 @@ const JobsPage = ({ deleteJob }) => {
     const fetchAllJobs = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://localhost:5000/api/jobs'); // Fetch ALL jobs
+            const response = await axios.get('https://codsoft-n1pn.onrender.com/api/jobs'); // Fetch ALL jobs
             if (response.status !== 200) {
                 throw new Error('Failed to fetch all jobs');
             }

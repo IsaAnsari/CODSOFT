@@ -24,7 +24,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
         const fetchJob = async () => {
             try {
                 setLoading(true);
-                const res = await axios.get(`http://localhost:5000/api/jobs/${id}`);
+                const res = await axios.get(`https://codsoft-n1pn.onrender.com/api/jobs/${id}`);
                 if (res.status !== 200) {
                     throw new Error('Failed to fetch job for editing');
                 }

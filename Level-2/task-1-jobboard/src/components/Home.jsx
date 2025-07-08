@@ -15,7 +15,7 @@ const Home = () => {
                 setLoading(true);
                 // Ensure this API call is correct and returns data.
                 // Your image_8c604e.png shows data from /api/jobs, so this should work.
-                const res = await axios.get('http://localhost:5000/api/jobs'); // Fetch all jobs
+                const res = await axios.get('https://codsoft-n1pn.onrender.com/api/jobs'); // Fetch all jobs
                 if (res.status !== 200) {
                     throw new Error('Failed to fetch featured jobs');
                 }

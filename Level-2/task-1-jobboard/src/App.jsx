@@ -23,7 +23,7 @@ function App() {
     // Functions to interact with your backend API
     const addJob = async (newJob) => {
         try {
-            const res = await axios.post('http://localhost:5000/api/jobs', newJob);
+            const res = await axios.post('https://codsoft-n1pn.onrender.com/api/jobs', newJob);
             console.log('Job added:', res.data);
             return res.data; // Return added job data if needed
         } catch (error) {
@@ -34,7 +34,7 @@ function App() {
 
     const updateJob = async (jobId, updatedJob) => {
         try {
-            const res = await axios.put(`http://localhost:5000/api/jobs/${jobId}`, updatedJob);
+            const res = await axios.put(`https://codsoft-n1pn.onrender.com/api/jobs/${jobId}`, updatedJob);
             console.log('Job updated:', res.data);
             return res.data;
         } catch (error) {
@@ -45,7 +45,7 @@ function App() {
 
     const deleteJob = async (jobId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/jobs/${jobId}`);
+            await axios.delete(`https://codsoft-n1pn.onrender.com/api/jobs/${jobId}`);
             console.log(`Job with ID ${jobId} deleted successfully.`);
             // No need to update App state here as JobsPage/JobDetailPage will re-fetch or manage
         } catch (error) {
