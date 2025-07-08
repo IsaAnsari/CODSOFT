@@ -38,7 +38,7 @@ const jobSchema = new mongoose.Schema({
     salary: String,
     requirements: [String],
     postedAt: { type: Date, default: Date.now }
-});
+}, { collection: 'jobs' });
 
 const Job = mongoose.model('Job', jobSchema);
 
