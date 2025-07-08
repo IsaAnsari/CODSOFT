@@ -11,10 +11,22 @@ app.use(express.json()); // To parse JSON request bodies
 
 // MongoDB Connection
 // const mongoURI = 'mongodb+srv://isaansari032:B8NIsQgUQ4NtecGy@cluster0.qty30b1.mongodb.net/jobboardDB?retryWrites=true&w=majority&appName=Cluster0';
+// const mongoURI = process.env.MONGO_URI; // Use the environment variable
+// mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+//     .then(() => console.log('MongoDB connected'))
+//     .catch(err => console.error(err));
+
+//------------------
+
 const mongoURI = process.env.MONGO_URI; // Use the environment variable
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error(err));
+    .then(() => {
+        console.log('MongoDB connected successfully!'); // Enhanced success message
+        console.log(`Connected to database: ${mongoose.connection.db.databaseName}`); // Confirm database name
+    })
+    .catch(err => {
+        console.error('MongoDB connection error:', err); // Log full error on connection failure
+    });
 
 // Job Schema and Model
 const jobSchema = new mongoose.Schema({
@@ -29,6 +41,10 @@ const jobSchema = new mongoose.Schema({
 });
 
 const Job = mongoose.model('Job', jobSchema);
+
+app.get('/', (req, res) => {
+    res.send('Backend is running and accessible!');
+});
 
 // API Routes
 
