@@ -51,7 +51,8 @@ app.get('/', (req, res) => {
 // GET all jobs
 app.get('/api/jobs', async (req, res) => {
     try {
-        const jobs = await Job.find().sort({ postedAt: -1 }); // Sort by newest first
+        // const jobs = await Job.find().sort({ postedAt: -1 }); // Sort by newest first
+        const jobs = await Job.find(); // Sort by newest first
         res.json(jobs);
     } catch (err) {
         console.error('Error fetching jobs:', err.message); // ADD THIS LINE
