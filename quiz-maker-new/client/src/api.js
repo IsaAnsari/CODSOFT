@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance with a base URL
 const API = axios.create({
-    baseURL: 'https://quiz-maker-api.onrender.com/', // This is your backend API base URL
+    baseURL: 'https://quiz-maker-api.onrender.com/api', // This is your backend API base URL
     headers: {
         'Content-Type': 'application/json',
     },
